@@ -26,6 +26,17 @@
     --text-tertiary:  #999999;
 }
 
+html, body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    box-sizing: border-box;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
 body {
     background: var(--bg);
     color: var(--text-primary);
@@ -299,4 +310,29 @@ body {
     line-height: 1.5;
     word-break: break-word;
     margin: 0;
+}
+
+@media (max-width: 600px) {
+    .navbar {
+        width: 100% !important;
+        padding: 10px 12px;
+        height: auto;
+        min-height: 52px;
+    }
+    
+    .left-navbar { left: 12px; }
+    .settings-btn { right: 12px; }
+    
+    .main { padding: 16px 12px; }
+    .list-container { 
+        padding: 12px 8px; 
+        max-width: 100%; 
+    }
+    .input-wrap { 
+        padding: 8px 12px 12px; 
+        max-width: 100%; 
+    }
+    
+    .header h1 { font-size: 1.05rem; }
+    #user-input { font-size: 1rem; }
 }
