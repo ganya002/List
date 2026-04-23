@@ -3,7 +3,13 @@ const sendBtn = document.querySelector("#send-btn");
 const listContainer = document.querySelector("#list-container");
 const newListBtn = document.querySelector("#new-list-btn");
 const settingsBtn = document.querySelector("#settings-btn");
+const customAlert = document.querySelector("#new-list-alert");
+const confirmBtn = document.querySelector("#confirmBtn");
+const cancelBtn = document.querySelector("#cancelBtn");
 let tasks = [];
+
+// Ensure alert starts hidden
+customAlert.style.display = "none";
 
 
 function deleteTask(id) {
@@ -65,17 +71,24 @@ function saveTasks() {
 
 loadTasks();
 
-newListBtn.addEventListener("click", () => {
-    if (confirm("Clear all notes?")) {
-        tasks = [];
-        saveTasks();
-        renderList();
-    }
+newListBtn.addEventListener("click", function() {
+    customAlert.style.display = "flex";
+});
+
+confirmBtn.addEventListener("click", function() {
+    tasks = [];
+    renderList();
+    saveTasks();
+    customAlert.style.display = "none";
+});
+
+cancelBtn.addEventListener("click", function() {
+    customAlert.style.display = "none";
 });
 
 function applyTheme(isDark) {
     document.documentElement.setAttribute('data-theme', isDark ? 'dark' : 'light');
-}
+};
 
 const savedDark = localStorage.getItem('darkMode');
 const isDark = savedDark === null ? true : savedDark === 'true';
