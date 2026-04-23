@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings</title>
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="settings.css">
+</head>
+<body>
+    <div class="app">
+        <div class="navbar">
+            <div class="left-navbar">
+                <div class="logo-avatar" id="home-btn">←</div>
+            </div>
+            <div class="header">
+                <h1>Settings</h1>
+            </div>
+        </div>
+
+        <div class="main">
+            <div class="settings-container">
+                <div class="setting-item">
+                    <label for="dark-mode-toggle">Dark Mode</label>
+                    <input type="checkbox" id="dark-mode-toggle" checked>
+                </div>
+                <div class="setting-item">
+                    <label for="font-size-select">Font Size (doesn't work yet)</label>
+                    <select id="font-size-select">
+                        <option value="small">Small</option>
+                        <option value="medium" selected>Medium</option>
+                        <option value="large">Large</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="settings.js"></script>
+</body>
+</html>
